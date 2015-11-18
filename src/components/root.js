@@ -1,37 +1,33 @@
-var React = require('react');
+import React from 'react';
 
-var Root = React.createClass({
+class Root extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {name: ''};
+    }
 
-  render: function () {
-    return (
-      <div>
-        <h1>Hello World!!!</h1>
+    render() {
+        return (
+            <div>
+                <h1>Hello World!!</h1>
 
-        <p>
-          Please input your name here:
-          <input onChange={this.handleChange}
-            value={this.state.name}
-          />
-        </p>
+                <p>
+                    Please input your name here:
+                    <input onChange={this.handleChange}
+                           value={this.state.name} />
+                </p>
 
-        <p>Hello, {this.state.name}</p>
-      </div>
-    );
-  },
+                <p>Hello, {this.state.name} </p>
+            </div>
+        );
+    }
 
-  getInitialState: function () {
-    return {
-      name: ''
-    };
-  },
+    handleChange(e){
+        var newName = e.target.value();
+        this.setState({
+            name: newName
+        });
+    }
+}
 
-  handleChange: function (e) {
-    var newName = e.target.value();
-    this.setState({
-      name: newName
-    });
-  }
-
-});
-
-module.exports = Root;
+export default Root;
