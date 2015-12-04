@@ -1,33 +1,39 @@
 import React from 'react';
 
 class Root extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {name: ''};
-    }
+  constructor(props) {
+    super(props);
 
-    render() {
-        return (
-            <div>
-                <h1>Hello World!!</h1>
+    this.state = {
+      name: ''
+    };
+  }
 
-                <p>
-                    Please input your name here:
-                    <input onChange={this.handleChange}
-                           value={this.state.name} />
-                </p>
+  render() {
+    return (
+      <div>
+        <h1>Hello World!!</h1>
 
-                <p>Hello, {this.state.name} </p>
-            </div>
-        );
-    }
+        <p>
+          Please input your name here:
+          <input
+            onChange={this.handleChange}
+            value={this.state.name}
+          />
+        </p>
 
-    handleChange(e){
-        var newName = e.target.value();
-        this.setState({
-            name: newName
-        });
-    }
+        <p>Hello, {this.state.name} </p>
+      </div>
+    );
+  }
+
+  handleChange(e) {
+    var newName = e.target.value();
+
+    this.setState({
+      name: newName
+    });
+  }
 }
 
 export default Root;

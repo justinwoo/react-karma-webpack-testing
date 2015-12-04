@@ -1,7 +1,7 @@
-var React = require('react');
-var TestUtils = require('react/lib/ReactTestUtils');
-var expect = require('expect');
-var Root = require('../root');
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
+import expect from 'expect';
+import Root from '../root';
 
 describe('root', function () {
   it('renders without problems', function () {
