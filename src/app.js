@@ -1,4 +1,9 @@
-var React = require('react');
-var Root = require('./components/root');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Root from './components/root';
 
-React.render(<Root/>, document.body);
+let div = document.createElement('div');
+
+document.body.appendChild(div);
+
+ReactDOM.render(<Root/>, div);
