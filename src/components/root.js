@@ -7,6 +7,14 @@ class Root extends React.Component {
     this.state = {
       name: ''
     };
+
+    this.handleChange  = (e) => {
+      var newName = e.target.value;
+
+      this.setState({
+        name: newName
+      });
+    }
   }
 
   render() {
@@ -16,23 +24,15 @@ class Root extends React.Component {
 
         <p>
           Please input your name here:
-          <input
+          <input ref="input"
             onChange={this.handleChange}
             value={this.state.name}
           />
         </p>
 
-        <p>Hello, {this.state.name} </p>
+        <p>Hello, <span ref="name">{this.state.name}</span> </p>
       </div>
     );
-  }
-
-  handleChange(e) {
-    var newName = e.target.value();
-
-    this.setState({
-      name: newName
-    });
   }
 }
 
